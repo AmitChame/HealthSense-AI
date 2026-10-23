@@ -1,0 +1,71 @@
+{
+  "model_name": "HealthSense ML Baseline v1",
+  "model_version": "1.0.0",
+  "algorithm": "lightgbm",
+  "dataset_version": "OFF_HEALTHSENSE_v1",
+  "feature_schema_version": "1.0.0",
+  "preprocessing_version": "1.0.0",
+  "training_date": "2026-08-16T23:57:08.105835",
+  "training_products": 3428,
+  "training_observations": 27424,
+  "active_model": "lightgbm",
+  "feature_count": 52,
+
+  "_LABEL_METHODOLOGY": "IMPORTANT — READ BEFORE INTERPRETING MODEL METRICS",
+  "label_source": "Programmatically generated from HealthSense rule configuration (trainer.py)",
+  "label_type": "RULE_GENERALIZATION",
+  "label_category": "Category C — Rule-Generalization ML",
+  "label_description": "Labels (RECOMMENDED=0, CAUTION=1, AVOID=2) were generated deterministically by applying configurable nutritional threshold rules to each (product, synthetic_member_scenario) pair. The ML model learns to generalize and interpolate these rule-based labels. This is NOT a model trained on clinically observed outcomes, dietitian-annotated data, or population health records.",
+
+  "_CLINICAL_VALIDATION": "This model has NOT been clinically validated, dietitian-reviewed, or evaluated on real patient outcomes. It is an educational decision-support tool. Do not claim clinical validation.",
+
+  "_TFIDF_NOTE": "The ingredient TF-IDF vocabulary is French-dominant due to multilingual Open Food Facts data. English-language ingredients may receive zero TF-IDF contribution. This is a known data quality issue documented for Phase 3 (multilingual retraining).",
+
+  "metrics": {
+    "model_name": "lightgbm",
+    "accuracy": 0.9747,
+    "precision_macro": 0.9733,
+    "recall_macro": 0.9693,
+    "f1_macro": 0.9712,
+    "roc_auc": 0.9978,
+    "false_negative_rate_avoid": 0.0604,
+    "avoid_recall": 0.9396,
+    "avg_latency_ms": 0.013,
+    "_metrics_note": "These metrics reflect performance on programmatically labeled test data only. They do not represent real-world clinical performance.",
+    "per_class": {
+      "RECOMMENDED": {
+        "precision": 0.9790764790764791,
+        "recall": 0.9923217550274223,
+        "f1": 0.9856546213909569
+      },
+      "CAUTION": {
+        "precision": 0.9781132075471698,
+        "recall": 0.9759036144578314,
+        "f1": 0.9770071617037316
+      },
+      "AVOID": {
+        "precision": 0.9626168224299065,
+        "recall": 0.9396491228070175,
+        "f1": 0.9509943181818182
+      }
+    },
+    "confusion_matrix": [
+      [2714, 0, 21],
+      [1, 1296, 31],
+      [57, 29, 1339]
+    ]
+  },
+
+  "preprocessing": {
+    "nutrition_scaler": "StandardScaler — fitted on training nutrition columns only (16 features)",
+    "tfidf": "TfidfVectorizer(max_features=25, ngram_range=(1,2)) — fitted on training ingredients only",
+    "scaler_path": "artifacts/scalers/nutrition_scaler.joblib",
+    "tfidf_path": "artifacts/encoders/ingredient_tfidf.joblib",
+    "features_list_path": "artifacts/encoders/features_list.json",
+    "split_strategy": "Stratified split at barcode level (test_size=0.20, random_state=42). Zero product overlap between train/test confirmed.",
+    "nan_handling": "NaN nutrition values replaced with 0.0 via np.nan_to_num() before scaling. Missingness is preserved via is_sugar_missing, is_sodium_missing, is_sat_fat_missing binary flags."
+  },
+
+  "model_comparison_path": "artifacts/model_comparison.json",
+  "disclaimer": "HealthSense AI provides educational food-health decision support only. It is not a substitute for professional medical advice, clinical diagnosis, or dietitian consultation."
+}

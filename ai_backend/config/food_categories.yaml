@@ -1,0 +1,134 @@
+# HealthSense AI Food Category Knowledge Base
+# Schema Version: 1.0.0
+# Defines composition requirements, nutrient expectations, and category warnings.
+# IMPORTANT: Composition requirements verify identity, NOT healthiness.
+
+categories:
+  # ─── CHOCOLATE & CONFECTIONERY ─────────────────────────────────────────────
+  chocolate:
+    name: "Chocolate"
+    parent: "confectionery"
+    tags: ["en:chocolates", "en:dark-chocolates", "chocolates", "chocolate"]
+    description: "Cocoa-based confectionery product containing cocoa solids and cocoa butter."
+    composition_standards:
+      source: "Codex Alimentarius CXS 87-1981 / FSSAI FSSR 2011"
+      min_cocoa_solids_pct: 35.0
+      min_cocoa_butter_pct: 18.0
+      min_fat_free_cocoa_pct: 14.0
+    relevant_nutrients: ["sugars", "saturated_fat", "energy_kcal"]
+    expected_nutrient_density: "HIGH_CALORIC_DENSITY"
+    relevant_allergens: ["milk", "soy", "tree_nuts", "peanut"]
+    processing_profile: "CULINARY_TO_PROCESSED"
+    baseline_frequency: "OCCASIONAL"
+    category_warnings:
+      - "Confectionery item with concentrated energy and saturated fats from cocoa butter."
+      - "Portion control recommended regardless of cocoa solids percentage."
+
+  milk_chocolate:
+    name: "Milk Chocolate"
+    parent: "chocolate"
+    tags: ["en:milk-chocolates", "milk-chocolate"]
+    description: "Chocolate containing dairy solids and cocoa products."
+    composition_standards:
+      source: "Codex Alimentarius CXS 87-1981 / FSSAI FSSR 2011"
+      min_cocoa_solids_pct: 25.0
+      min_milk_solids_pct: 14.0
+      min_milk_fat_pct: 2.5
+    relevant_nutrients: ["sugars", "saturated_fat", "energy_kcal", "calcium"]
+    expected_nutrient_density: "HIGH_CALORIC_DENSITY"
+    relevant_allergens: ["milk", "soy", "tree_nuts", "peanut"]
+    processing_profile: "PROCESSED_CONFECTIONERY"
+    baseline_frequency: "OCCASIONAL"
+    category_warnings:
+      - "Contains significant dairy milk solids and added sugars."
+
+  general_confectionery:
+    name: "Confectionery / Candy"
+    parent: "sweets"
+    tags: ["en:confectioneries", "en:candies", "en:sweets", "confectionery"]
+    description: "Sugar-based confectionery with minimal dietary fiber or micronutrients."
+    composition_standards:
+      source: "FSSAI / Codex"
+    relevant_nutrients: ["sugars", "energy_kcal"]
+    expected_nutrient_density: "LOW_NUTRIENT_DENSITY"
+    relevant_allergens: ["gelatin", "artificial_colors", "gluten"]
+    processing_profile: "ULTRA_PROCESSED"
+    baseline_frequency: "LIMIT"
+    category_warnings:
+      - "High concentration of simple refined sugars with minimal nutritional benefit."
+
+  # ─── BEVERAGES ──────────────────────────────────────────────────────────────
+  energy_drink:
+    name: "Energy Drink"
+    parent: "beverage"
+    tags: ["en:energy-drinks", "energy-drinks", "energy drinks"]
+    description: "Caffeinated beverage with added stimulants (taurine, guarana, B-vitamins)."
+    composition_standards:
+      source: "FSSAI Regulation on Caffeinated Beverages (2016) / EFSA"
+      max_caffeine_mg_per_l: 300.0 # FSSAI limit: max 300 mg/l
+    relevant_nutrients: ["sugars", "caffeine"]
+    expected_nutrient_density: "STIMULANT_BEVERAGE"
+    relevant_allergens: []
+    processing_profile: "ULTRA_PROCESSED"
+    baseline_frequency: "LIMIT"
+    pediatric_restriction: "STRICT_AVOID_UNDER_12"
+    category_warnings:
+      - "High caffeine and stimulant formulation; not recommended for children under 12, pregnant women, or caffeine-sensitive individuals."
+
+  soft_drink:
+    name: "Sugar-Sweetened Beverage"
+    parent: "beverage"
+    tags: ["en:carbonated-drinks", "en:sodas", "en:soft-drinks", "soda", "soft drink"]
+    description: "Carbonated or still flavored water with added sugars or artificial sweeteners."
+    relevant_nutrients: ["sugars", "energy_kcal"]
+    expected_nutrient_density: "ZERO_NUTRIENT_DENSITY"
+    relevant_allergens: []
+    processing_profile: "ULTRA_PROCESSED"
+    baseline_frequency: "LIMIT"
+    category_warnings:
+      - "Liquid free sugars produce fast blood glucose spikes without satiety."
+
+  # ─── GRAINS & CEREALS ───────────────────────────────────────────────────────
+  oats:
+    name: "Oats & Whole Oatmeal"
+    parent: "grains"
+    tags: ["en:oats", "en:rolled-oats", "en:oat-flakes", "oats", "oatmeal"]
+    description: "Whole grain oats rich in beta-glucan soluble fiber, complex carbohydrates, and plant protein."
+    composition_standards:
+      source: "Codex Alimentarius CXS 152-1985 (Wheat Flour/Grains)"
+      min_whole_grain_pct: 100.0
+    relevant_nutrients: ["fiber", "protein", "carbohydrates", "beta_glucan"]
+    expected_nutrient_density: "HIGH_NUTRIENT_DENSITY"
+    relevant_allergens: ["gluten"]
+    processing_profile: "MINIMALLY_PROCESSED"
+    baseline_frequency: "REGULAR"
+    category_warnings: []
+
+  bread_whole_grain:
+    name: "Whole Grain Bread"
+    parent: "grains"
+    tags: ["en:breads", "en:wholemeal-breads", "bread", "whole wheat bread"]
+    description: "Baked bread prepared with whole grain cereal flour."
+    relevant_nutrients: ["fiber", "protein", "sodium", "carbohydrates"]
+    expected_nutrient_density: "MODERATE_NUTRIENT_DENSITY"
+    relevant_allergens: ["gluten", "sesame", "soy"]
+    processing_profile: "PROCESSED"
+    baseline_frequency: "REGULAR"
+    category_warnings:
+      - "Commercial breads often contain significant sodium per slice."
+
+  # ─── DAIRY ──────────────────────────────────────────────────────────────────
+  plain_yogurt:
+    name: "Plain Yogurt / Curd"
+    parent: "dairy"
+    tags: ["en:yogurts", "en:plain-yogurts", "curd", "dahi", "yogurt"]
+    description: "Fermented dairy product providing protein, calcium, and beneficial cultures."
+    composition_standards:
+      source: "Codex CXS 243-2003 (Fermented Milks) / FSSAI 2.1.13"
+      min_milk_protein_pct: 2.7
+    relevant_nutrients: ["protein", "calcium", "sugars", "fat"]
+    expected_nutrient_density: "HIGH_NUTRIENT_DENSITY"
+    relevant_allergens: ["milk"]
+    processing_profile: "MINIMALLY_PROCESSED"
+    baseline_frequency: "REGULAR"
+    category_warnings: []

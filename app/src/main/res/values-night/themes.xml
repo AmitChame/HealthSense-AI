@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Application Theme for Night Mode -->
+    <style name="Theme.HealthSenseAI" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary Brand Colors -->
+        <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorOnPrimary">@color/secondary_dark</item>
+        <item name="colorPrimaryContainer">@color/primary_dark</item>
+        <item name="colorOnPrimaryContainer">@color/primary_container</item>
+
+        <!-- Secondary Brand Colors -->
+        <item name="colorSecondary">#94A3B8</item>
+        <item name="colorOnSecondary">#0F172A</item>
+
+        <!-- Background & Surface -->
+        <item name="android:colorBackground">#0B132B</item>
+        <item name="colorSurface">#1C2541</item>
+        <item name="colorOnSurface">#F8FAFC</item>
+        <item name="colorSurfaceVariant">#243256</item>
+        <item name="colorOnSurfaceVariant">#CBD5E1</item>
+
+        <!-- Status & Navigation Bars -->
+        <item name="android:statusBarColor">#0B132B</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">#1C2541</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+        <!-- Material Component Overrides -->
+        <item name="materialCardViewStyle">@style/Widget.HealthSenseAI.CardView</item>
+        <item name="textInputStyle">@style/Widget.HealthSenseAI.TextInputLayout</item>
+        <item name="android:editTextColor">#F8FAFC</item>
+        <item name="android:textColorPrimary">#F8FAFC</item>
+    </style>
+
+    <style name="Widget.HealthSenseAI.CardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">@dimen/corner_radius_lg</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="strokeColor">#334155</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cardBackgroundColor">#1C2541</item>
+    </style>
+
+    <style name="Widget.HealthSenseAI.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">@dimen/corner_radius_md</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/corner_radius_md</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/corner_radius_md</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/corner_radius_md</item>
+        <item name="boxStrokeColor">@color/primary_light</item>
+        <item name="hintTextColor">@color/on_surface_variant</item>
+        <item name="android:textColorHint">@color/on_surface_variant</item>
+    </style>
+
+    <style name="Widget.HealthSenseAI.Button.Primary" parent="Widget.Material3.Button">
+        <item name="cornerRadius">@dimen/corner_radius_md</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:textColor">@color/on_primary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Widget.HealthSenseAI.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="cornerRadius">@dimen/corner_radius_md</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="strokeColor">@color/primary_light</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="android:textColor">@color/primary_light</item>
+    </style>
+</resources>

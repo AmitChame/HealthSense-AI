@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!--
+      HealthSense AI — Network Security Configuration
+      Permits unencrypted HTTP (cleartext) traffic for local end-to-end integration testing.
+    -->
+
+    <!-- Allow cleartext for development IP ranges and loopbacks -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">10.0.2.2</domain>
+        <!-- Explicitly allow the developer's computer IP for physical phone testing -->
+        <domain includeSubdomains="true">10.187.241.1</domain>
+        <!-- Common LAN ranges -->
+        <domain includeSubdomains="true">192.168.1.0/24</domain>
+        <domain includeSubdomains="true">192.168.0.0/24</domain>
+    </domain-config>
+
+    <!-- Broad fallback to allow cleartext for ANY local IP during development -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+
+</network-security-config>

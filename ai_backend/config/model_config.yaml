@@ -1,0 +1,47 @@
+active: lightgbm
+available_models:
+- logistic_regression
+- random_forest
+- xgboost
+- lightgbm
+best_model:
+  metadata_path: artifacts/models/model_metadata.json
+  path: artifacts/models/best_model/
+feature_pipeline:
+  features_list_path: artifacts/encoders/features_list.json
+  scaler_path: artifacts/scalers/nutrition_scaler.joblib
+  tfidf_path: artifacts/encoders/ingredient_tfidf.joblib
+models:
+  lightgbm:
+    artifact_path: artifacts/models/lightgbm.joblib
+    learning_rate: 0.1
+    n_estimators: 100
+    n_jobs: -1
+    name: LightGBM Classifier
+    num_leaves: 31
+    random_state: 42
+    verbose: -1
+  logistic_regression:
+    artifact_path: artifacts/models/logistic_regression.joblib
+    class_weight: balanced
+    max_iter: 1000
+    name: Logistic Regression Baseline
+    random_state: 42
+  random_forest:
+    artifact_path: artifacts/models/random_forest.joblib
+    class_weight: balanced
+    max_depth: 12
+    n_estimators: 100
+    n_jobs: -1
+    name: Random Forest Classifier
+    random_state: 42
+  xgboost:
+    artifact_path: artifacts/models/xgboost.joblib
+    colsample_bytree: 0.8
+    learning_rate: 0.1
+    max_depth: 6
+    n_estimators: 100
+    n_jobs: -1
+    name: XGBoost Classifier
+    random_state: 42
+    subsample: 0.8

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Common Health Conditions -->
+    <string-array name="common_health_conditions">
+        <item>Diabetes (Type 1 / Type 2)</item>
+        <item>Hypertension (High Blood Pressure)</item>
+        <item>High Cholesterol (Hyperlipidemia)</item>
+        <item>Heart-related Restrictions</item>
+        <item>Kidney Disease / Renal Restrictions</item>
+        <item>Obesity / Weight Management</item>
+        <item>Celiac Disease / Gluten Intolerance</item>
+        <item>Lactose Intolerance</item>
+        <item>Gout / High Uric Acid</item>
+        <item>None</item>
+    </string-array>
+
+    <!-- Common Allergens -->
+    <string-array name="common_allergies">
+        <item>Peanuts</item>
+        <item>Tree Nuts (Almonds, Cashews, Walnuts)</item>
+        <item>Milk / Dairy</item>
+        <item>Eggs</item>
+        <item>Wheat / Gluten</item>
+        <item>Soybeans</item>
+        <item>Fish</item>
+        <item>Shellfish / Crustaceans</item>
+        <item>Sesame Seeds</item>
+        <item>Mustard</item>
+        <item>Sulfites</item>
+        <item>None</item>
+    </string-array>
+
+    <!-- Dietary Preferences -->
+    <string-array name="dietary_preferences">
+        <item>Vegetarian</item>
+        <item>Vegan</item>
+        <item>Pescatarian</item>
+        <item>Low Sodium</item>
+        <item>Low Sugar / Diabetic-Friendly</item>
+        <item>Keto / Low Carb</item>
+        <item>Halal</item>
+        <item>Kosher</item>
+        <item>General Balanced Diet</item>
+    </string-array>
+
+    <!-- Genders -->
+    <string-array name="genders">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+        <item>Prefer not to say</item>
+    </string-array>
+</resources>

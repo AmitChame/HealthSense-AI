@@ -1,0 +1,183 @@
+# HealthSense AI Safety Rules Configuration
+# Hard rules are deterministic and ALWAYS override ML predictions.
+# Every rule is linked to an evidence standard ID from evidence_standards.yaml where applicable.
+
+hard_safety_rules:
+  peanut_allergy:
+    id: "RULE_ALLERGEN_PEANUT"
+    category: "ALLERGEN"
+    severity: "CRITICAL"
+    condition_field: "peanut_allergy"
+    trigger_flag: "contains_peanut"
+    recommendation: "AVOID"
+    risk_score: 100.0
+    explanation: "Strict Allergen Conflict: Product contains or may contain peanuts. Absolute avoidance required."
+    evidence_id: "EVID_CODEX_ALLERGEN_PEANUT"
+
+  tree_nut_allergy:
+    id: "RULE_ALLERGEN_TREE_NUT"
+    category: "ALLERGEN"
+    severity: "CRITICAL"
+    condition_field: "tree_nut_allergy"
+    trigger_flag: "contains_tree_nuts"
+    recommendation: "AVOID"
+    risk_score: 100.0
+    explanation: "Strict Allergen Conflict: Product contains tree nuts (e.g. almonds, cashews, walnuts)."
+    evidence_id: "EVID_CODEX_ALLERGEN_TREE_NUT"
+
+  dairy_allergy:
+    id: "RULE_ALLERGEN_MILK"
+    category: "ALLERGEN"
+    severity: "CRITICAL"
+    condition_field: "milk_allergy"
+    trigger_flag: "contains_milk"
+    recommendation: "AVOID"
+    risk_score: 95.0
+    explanation: "Allergen Alert: Contains milk/dairy proteins."
+    evidence_id: "EVID_CODEX_ALLERGEN_MILK"
+
+  egg_allergy:
+    id: "RULE_ALLERGEN_EGG"
+    category: "ALLERGEN"
+    severity: "CRITICAL"
+    condition_field: "egg_allergy"
+    trigger_flag: "contains_egg"
+    recommendation: "AVOID"
+    risk_score: 95.0
+    explanation: "Allergen Alert: Contains egg or egg derivatives."
+    evidence_id: "EVID_CODEX_ALLERGEN_EGG"
+
+  gluten_allergy_celiac:
+    id: "RULE_ALLERGEN_GLUTEN"
+    category: "ALLERGEN"
+    severity: "CRITICAL"
+    condition_field: "gluten_allergy"
+    trigger_flag: "contains_gluten"
+    recommendation: "AVOID"
+    risk_score: 95.0
+    explanation: "Gluten Alert: Contains wheat, barley, rye, or gluten grains unsuitable for Celiac/Gluten allergy."
+    evidence_id: "EVID_CODEX_ALLERGEN_GLUTEN"
+
+  soy_allergy:
+    id: "RULE_ALLERGEN_SOY"
+    category: "ALLERGEN"
+    severity: "HIGH"
+    condition_field: "soy_allergy"
+    trigger_flag: "contains_soy"
+    recommendation: "AVOID"
+    risk_score: 90.0
+    explanation: "Allergen Alert: Contains soy or soy derivatives."
+    evidence_id: "EVID_CODEX_ALLERGEN_SOY"
+
+  fish_allergy:
+    id: "RULE_ALLERGEN_FISH"
+    category: "ALLERGEN"
+    severity: "CRITICAL"
+    condition_field: "fish_allergy"
+    trigger_flag: "contains_fish"
+    recommendation: "AVOID"
+    risk_score: 100.0
+    explanation: "Allergen Alert: Contains fish ingredients."
+    evidence_id: "EVID_CODEX_ALLERGEN_FISH"
+
+  shellfish_allergy:
+    id: "RULE_ALLERGEN_SHELLFISH"
+    category: "ALLERGEN"
+    severity: "CRITICAL"
+    condition_field: "shellfish_allergy"
+    trigger_flag: "contains_shellfish"
+    recommendation: "AVOID"
+    risk_score: 100.0
+    explanation: "Allergen Alert: Contains crustacean / shellfish ingredients."
+    evidence_id: "EVID_CODEX_ALLERGEN_CRUSTACEA"
+
+  sesame_allergy:
+    id: "RULE_ALLERGEN_SESAME"
+    category: "ALLERGEN"
+    severity: "HIGH"
+    condition_field: "sesame_allergy"
+    trigger_flag: "contains_sesame"
+    recommendation: "AVOID"
+    risk_score: 90.0
+    explanation: "Allergen Alert: Contains sesame seeds or sesame oil."
+    evidence_id: "EVID_CODEX_ALLERGEN_SESAME"
+
+health_condition_rules:
+  diabetes_high_sugar:
+    id: "RULE_COND_DIABETES_SUGAR"
+    category: "CHRONIC_CONDITION"
+    severity: "HIGH"
+    condition_field: "diabetes"
+    metric: "sugars_100g"
+    threshold_avoid: 12.0
+    threshold_caution: 5.0
+    explanation_avoid: "High Sugar for Diabetes: Sugar content ({value:.1f}g/100g) exceeds safety threshold ({threshold:.1f}g)."
+    explanation_caution: "Moderate Sugar: Sugar content ({value:.1f}g/100g) requires strict portion control."
+    evidence_id: "EVID_ADA_DIABETES_SUGAR_2024"
+    evidence_source: "ADA Standards of Care in Diabetes (2024)"
+
+  hypertension_high_sodium:
+    id: "RULE_COND_HYPERTENSION_SODIUM"
+    category: "CHRONIC_CONDITION"
+    severity: "HIGH"
+    condition_field: "hypertension"
+    metric: "sodium_100g"
+    threshold_avoid: 400.0 # mg per 100g
+    threshold_caution: 250.0
+    explanation_avoid: "High Sodium for Blood Pressure: Sodium content ({value:.0f}mg/100g) exceeds hypertensive limit ({threshold:.0f}mg)."
+    explanation_caution: "Elevated Sodium: Sodium content ({value:.0f}mg/100g) should be monitored for blood pressure."
+    evidence_id: "EVID_AHA_HYPERTENSION_SODIUM_2023"
+    evidence_source: "AHA Dietary Recommendations for Sodium (2023)"
+
+  cholesterol_sat_fat:
+    id: "RULE_COND_CHOLESTEROL_SAT_FAT"
+    category: "CHRONIC_CONDITION"
+    severity: "HIGH"
+    condition_field: "high_cholesterol"
+    metric: "saturated_fat_100g"
+    threshold_avoid: 4.0
+    threshold_caution: 2.0
+    explanation_avoid: "High Saturated Fat: Saturated fat ({value:.1f}g/100g) exceeds cardiovascular health recommendation ({threshold:.1f}g)."
+    explanation_caution: "Moderate Saturated Fat: Saturated fat ({value:.1f}g/100g) requires moderation for healthy lipid levels."
+    evidence_id: "EVID_NCEP_ATP_III_CHOLESTEROL"
+    evidence_source: "NCEP ATP III / AHA Dietary Guidance (2021)"
+
+general_health_rules:
+  high_sugar:
+    id: "RULE_GEN_HIGH_SUGAR"
+    metric: "sugars_100g"
+    threshold_caution: 20.0
+    explanation: "High Sugar Content: Product contains {value:.1f}g sugar per 100g."
+    evidence_id: "EVID_WHO_SUGARS_2015"
+    evidence_source: "WHO Guideline on Sugars (2015)"
+  
+  high_sodium:
+    id: "RULE_GEN_HIGH_SODIUM"
+    metric: "sodium_100g"
+    threshold_caution: 800.0
+    explanation: "High Sodium Content: Product contains {value:.0f}mg sodium per 100g."
+    evidence_id: "EVID_WHO_SODIUM_2023"
+    evidence_source: "WHO Sodium Report (2023)"
+
+dietary_preference_rules:
+  vegan_restriction:
+    id: "RULE_DIET_VEGAN"
+    category: "DIETARY_PREFERENCE"
+    severity: "MEDIUM"
+    condition_field: "vegan"
+    trigger_flag: "contains_animal_derived"
+    recommendation: "AVOID"
+    risk_score: 75.0
+    explanation: "Dietary Conflict: Product contains animal-derived ingredients (dairy, egg, meat, gelatin, or honey)."
+    evidence_id: "EVID_DIET_VEGAN_COMPOSITION"
+
+  vegetarian_restriction:
+    id: "RULE_DIET_VEGETARIAN"
+    category: "DIETARY_PREFERENCE"
+    severity: "MEDIUM"
+    condition_field: "vegetarian"
+    trigger_flag: "contains_meat_or_gelatin"
+    recommendation: "AVOID"
+    risk_score: 75.0
+    explanation: "Dietary Conflict: Product contains meat, poultry, fish, or gelatin."
+    evidence_id: "EVID_DIET_VEGETARIAN_COMPOSITION"

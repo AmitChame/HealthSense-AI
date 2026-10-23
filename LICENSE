@@ -1,0 +1,66 @@
+# Academic & Educational Evaluation License
+# Copyright (c) 2026 Amit Chame. All Rights Reserved.
+
+Project: HealthSense AI — Intelligent Food Analysis and Personalized Dietary Guidance System
+Author / Owner: Amit Chame (amitchame19@gmail.com)
+Academic Context: Master of Computer Applications (MCA) Mini Project
+
+================================================================================
+TERMS AND CONDITIONS FOR ACADEMIC & EDUCATIONAL USE
+================================================================================
+
+1. GRANT OF LICENSE
+   Permission is hereby granted to faculty members, academic evaluators, reviewers, 
+   recruiters, and individuals to view, inspect, download, compile, and run this 
+   software solely for educational evaluation, academic review, project grading, 
+   and technical portfolio examination.
+
+2. RESTRICTIONS
+   - No Commercial Use: This software and associated trained model artifacts may 
+     NOT be used, sold, leased, or sublicensed for commercial or medical purposes.
+   - No Redistribution: Redistribution, mirroring, or publication of the source 
+     code or proprietary datasets in modified or unmodified form without the express 
+     written consent of the copyright holder is strictly prohibited.
+   - Retention of Notice: All copies of the software or substantial portions thereof 
+     must retain this copyright notice and permission terms.
+
+3. MEDICAL & CLINICAL DISCLAIMER
+   THE SOFTWARE IS PROVIDED FOR INFORMATIONAL AND EDUCATIONAL DECISION-SUPPORT 
+   PURPOSES ONLY. IT DOES NOT CONSTITUTE MEDICAL ADVICE, CLINICAL DIAGNOSIS, 
+   DIETARY PRESCRIPTION, OR TREATMENT RECOMMENDATIONS. THE AUTHORS AND COPYRIGHT 
+   HOLDERS EXPRESSLY DISCLAIM ALL LIABILITY FOR ADVERSE HEALTH OUTCOMES, ALLERGIC 
+   REACTIONS, OR MEDICAL COMPLICATIONS ARISING FROM RELIANCE UPON THIS SOFTWARE.
+
+4. DISCLAIMER OF WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER 
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, 
+   OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
+   THE SOFTWARE.
+
+================================================================================
+THIRD-PARTY ACKNOWLEDGMENTS AND ATTRIBUTIONS
+================================================================================
+
+This project utilizes open-source libraries, open datasets, and research frameworks 
+subject to their respective licenses:
+
+1. Open Food Facts
+   - Dataset & API: https://world.openfoodfacts.org/
+   - License: Open Database License (ODbL) v1.0 / Database Contents License (DbCL) v1.0
+   - Attribution: Data contributed by the Open Food Facts community.
+
+2. Android Jetpack & Google Libraries
+   - Components: AndroidX, Material Design, CameraX, ML Kit, Firebase Client SDK
+   - License: Apache License 2.0 / Google APIs Terms of Service
+
+3. Python Backend Frameworks & Libraries
+   - Django: BSD 3-Clause License (Copyright (c) Django Software Foundation)
+   - Django REST Framework: Encode OSS (BSD 2-Clause License)
+   - LightGBM: MIT License (Copyright (c) Microsoft Corporation)
+   - XGBoost: Apache License 2.0 (Copyright (c) XGBoost Contributors)
+   - Scikit-Learn: BSD 3-Clause License (Copyright (c) 2007-2024 The scikit-learn developers)
+   - SHAP: MIT License (Copyright (c) 2018 Scott Lundberg)
+   - Pandas, NumPy, Joblib, PyYAML: BSD / MIT / PSF Licenses

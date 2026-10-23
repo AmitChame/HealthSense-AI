@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Brand Colors -->
+    <color name="primary">#0D9488</color>
+    <color name="primary_dark">#0F766E</color>
+    <color name="primary_light">#2DD4BF</color>
+    <color name="primary_container">#E6FFFA</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_primary_container">#0F766E</color>
+
+    <!-- Secondary & Accent -->
+    <color name="secondary">#0F2942</color>
+    <color name="secondary_dark">#0B1E30</color>
+    <color name="secondary_light">#1E3A5F</color>
+    <color name="secondary_container">#E2E8F0</color>
+    <color name="on_secondary">#FFFFFF</color>
+
+    <!-- Background & Surface -->
+    <color name="background">#F8FAFC</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#F1F5F9</color>
+    <color name="on_surface">#0F172A</color>
+    <color name="on_surface_variant">#64748B</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_muted">#94A3B8</color>
+    <color name="text_white">#FFFFFF</color>
+
+    <!-- UI Elements -->
+    <color name="divider">#E2E8F0</color>
+    <color name="card_stroke">#E2E8F0</color>
+    <color name="chip_bg">#F1F5F9</color>
+    <color name="chip_selected_bg">#CCFBF1</color>
+    <color name="chip_selected_stroke">#0D9488</color>
+
+    <!-- Health Status / Suitability Colors -->
+    <color name="status_suitable">#10B981</color>
+    <color name="status_suitable_bg">#ECFDF5</color>
+    <color name="status_suitable_stroke">#A7F3D0</color>
+    <color name="status_suitable_text">#065F46</color>
+
+    <color name="status_caution">#F59E0B</color>
+    <color name="status_caution_bg">#FFFBEB</color>
+    <color name="status_caution_stroke">#FDE68A</color>
+    <color name="status_caution_text">#92400E</color>
+
+    <color name="status_danger">#EF4444</color>
+    <color name="status_danger_bg">#FEF2F2</color>
+    <color name="status_danger_stroke">#FECACA</color>
+    <color name="status_danger_text">#991B1B</color>
+
+    <!-- Scanner Reticle -->
+    <color name="scanner_overlay">#80000000</color>
+    <color name="scanner_reticle">#0D9488</color>
+    <color name="scanner_laser">#2DD4BF</color>
+
+    <!-- Basic Colors -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+</resources>

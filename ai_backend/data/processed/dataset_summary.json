@@ -1,0 +1,110 @@
+{
+  "dataset_version": "OFF_HEALTHSENSE_v1",
+  "creation_date": "2026-08-16T23:49:36.908330",
+  "source": "OpenFoodFacts API (Search)",
+  "total_raw_processed": 4200,
+  "unique_products": 3428,
+  "features_count": 38,
+  "label_distribution": {
+    "RECOMMENDED": {
+      "count": 13634,
+      "percentage": 49.72
+    },
+    "CAUTION": {
+      "count": 6740,
+      "percentage": 24.58
+    },
+    "AVOID": {
+      "count": 7050,
+      "percentage": 25.71
+    }
+  },
+  "profile_distribution": {
+    "General_Healthy": {
+      "RECOMMENDED": 2372,
+      "CAUTION": 1056
+    },
+    "Diabetic_Patient": {
+      "RECOMMENDED": 1694,
+      "CAUTION": 659,
+      "AVOID": 1075
+    },
+    "Hypertensive_Patient": {
+      "RECOMMENDED": 1225,
+      "CAUTION": 1290,
+      "AVOID": 913
+    },
+    "High_Cholesterol_Patient": {
+      "RECOMMENDED": 1368,
+      "CAUTION": 920,
+      "AVOID": 1140
+    },
+    "Peanut_Allergic": {
+      "RECOMMENDED": 2287,
+      "CAUTION": 1011,
+      "AVOID": 130
+    },
+    "Dairy_Allergic": {
+      "RECOMMENDED": 1467,
+      "CAUTION": 533,
+      "AVOID": 1428
+    },
+    "Celiac_Gluten_Allergic": {
+      "RECOMMENDED": 1527,
+      "CAUTION": 612,
+      "AVOID": 1289
+    },
+    "Diabetic_Hypertensive_Senior": {
+      "RECOMMENDED": 1694,
+      "CAUTION": 659,
+      "AVOID": 1075
+    }
+  },
+  "missingness": {
+    "barcode": 0.0,
+    "product_name": 0.0,
+    "brand": 0.0,
+    "categories": 0.0,
+    "serving_size": 0.0,
+    "ingredients_text": 0.0,
+    "normalized_ingredients": 0.0,
+    "energy_kcal_100g": 0.20420070011668612,
+    "sugars_100g": 0.029171528588098013,
+    "sodium_100g": 0.1750291715285881,
+    "fat_100g": 0.029171528588098013,
+    "saturated_fat_100g": 0.4959159859976663,
+    "carbohydrates_100g": 0.029171528588098013,
+    "protein_100g": 0.029171528588098013,
+    "fiber_100g": 22.78296382730455,
+    "nova_group": 3.9089848308051343,
+    "nutriscore": 0.0,
+    "healthsense_grade": 0.0,
+    "healthsense_score": 0.0,
+    "contains_peanut": 0.0,
+    "contains_tree_nuts": 0.0,
+    "contains_milk": 0.0,
+    "contains_egg": 0.0,
+    "contains_gluten": 0.0,
+    "contains_soy": 0.0,
+    "contains_fish": 0.0,
+    "contains_shellfish": 0.0,
+    "contains_sesame": 0.0,
+    "contains_mustard": 0.0,
+    "contains_sulfites": 0.0,
+    "added_sugar_indicator": 0.0,
+    "artificial_sweetener_indicator": 0.0,
+    "preservative_indicator": 0.0,
+    "artificial_color_indicator": 0.0,
+    "hydrogenated_oil_indicator": 0.0,
+    "high_concern_ingredient_count": 0.0,
+    "contains_animal_derived": 0.0,
+    "contains_meat_or_gelatin": 0.0
+  },
+  "cleaning_stats": {
+    "initial_rows": 3690,
+    "duplicate_barcodes_removed": 262,
+    "invalid_barcodes_removed": 0,
+    "out_of_range_nutrients_flagged": 19,
+    "final_rows": 3428
+  }
+}

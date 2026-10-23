@@ -1,0 +1,42 @@
+# HealthSense AI Nutritional Benchmarks & Grading Configuration
+# Reference baselines derived from standard dietary guidelines (WHO, AHA, FDA)
+
+nutrition_thresholds:
+  # Values per 100g
+  sugar:
+    low: 5.0      # g
+    moderate: 10.0 # g
+    high: 15.0    # g
+  sodium:
+    low: 120.0    # mg
+    moderate: 400.0 # mg
+    high: 600.0   # mg
+  saturated_fat:
+    low: 1.5      # g
+    moderate: 4.0 # g
+    high: 5.0     # g
+  fiber:
+    good: 3.0     # g
+    high: 6.0     # g
+  protein:
+    good: 5.0     # g
+    high: 10.0    # g
+  energy_kcal:
+    low: 100.0    # kcal
+    moderate: 250.0 # kcal
+    high: 400.0   # kcal
+
+food_grading:
+  # Standalone HealthSense Food Quality Grade (A to E)
+  # Score range: 0 (worst) to 100 (best)
+  thresholds:
+    A: 80.0
+    B: 65.0
+    C: 50.0
+    D: 35.0
+    E: 0.0
+
+  weights:
+    nutrition_quality: 0.50
+    ingredient_concerns: 0.30
+    processing_level: 0.20

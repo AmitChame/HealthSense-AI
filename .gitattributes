@@ -1,0 +1,44 @@
+# ==============================================================================
+# HealthSense AI — Git Attributes
+# Controls line endings, text handling, and binary file preservation across OSes.
+# ==============================================================================
+
+# Auto-detect text files and normalize line endings to LF on commit
+* text=auto eol=lf
+
+# Explicit text files
+*.java text diff=java eol=lf
+*.kt text eol=lf
+*.py text diff=python eol=lf
+*.xml text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.gradle text eol=lf
+*.properties text eol=lf
+*.ini text eol=lf
+
+# Windows command scripts must retain CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Shell scripts must retain LF
+*.sh text eol=lf
+gradlew text eol=lf
+
+# Explicit binary files
+*.joblib binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.docx binary
+*.jar binary
+*.aar binary
+*.apk binary
+*.aab binary

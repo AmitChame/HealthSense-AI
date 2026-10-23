@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/surface"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_history_thumb"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@color/surface_variant"
+                android:contentDescription="Product thumbnail"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_nutrition" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_history_product_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-black"
+                    android:maxLines="1"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    tools:text="Granola Bar Dark Chocolate" />
+
+                <TextView
+                    android:id="@+id/tv_history_brand_barcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    tools:text="Nature Valley • 016000275270" />
+
+                <TextView
+                    android:id="@+id/tv_history_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/text_muted"
+                    android:textSize="11sp"
+                    tools:text="Aug 16, 2026, 11:30 AM" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btn_delete_history_item"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:padding="10dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Delete"
+                android:src="@drawable/ic_delete"
+                app:tint="@color/text_muted" />
+        </LinearLayout>
+
+        <!-- Summary Chips of Suitability for Family Members -->
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_history_family"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:chipSpacingHorizontal="6dp"
+            app:chipSpacingVertical="2dp" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

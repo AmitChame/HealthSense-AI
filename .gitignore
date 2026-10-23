@@ -1,0 +1,104 @@
+# ==============================================================================
+# HealthSense AI — Comprehensive .gitignore
+# Excludes OS artifacts, IDEs, build caches, credentials, and raw data dumps.
+# ==============================================================================
+
+# ─── Operating System Files ───────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─── IDE & Editor Directories ─────────────────────────────────────────────────
+.idea/
+*.iml
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# ─── Android Build & Tooling ──────────────────────────────────────────────────
+.gradle/
+build/
+*/build/
+app/build/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+*.apk
+*.aab
+*.ap_
+output-metadata.json
+
+# ─── Android Keystores & Signing Keys ─────────────────────────────────────────
+*.jks
+*.keystore
+*.p12
+*.key
+*.pem
+signing/
+
+# ─── Firebase Client & Service Account Secrets ────────────────────────────────
+# Real client config is excluded; developers use google-services.json.template
+app/google-services.json
+!app/google-services.json.template
+*firebase-adminsdk*.json
+*service-account*.json
+
+# ─── Python & Django ──────────────────────────────────────────────────────────
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+*/*/*/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+
+# Virtual Environments
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment Secrets
+.env
+.env.*
+!.env.example
+ai_backend/.env
+ai_backend/.env.*
+!ai_backend/.env.example
+
+# Local SQLite Database & Logs
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-shm
+*.sqlite3-wal
+ai_backend/db.sqlite3
+*.log
+logs/
+
+# Testing & Pytest Caches
+.pytest_cache/
+*/.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ─── Large Raw Datasets (Reproducible via scripts) ─────────────────────────────
+ai_backend/data/raw/openfoodfacts/
+ai_backend/data/raw/*.json
+ai_backend/data/raw/*.csv
+*.tar.gz
+*.zip
+
+# ─── Scratch & Temporary Files ────────────────────────────────────────────────
+scratch/
+tmp/
+*.tmp

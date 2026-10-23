@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card_elevated"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="24dp">
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/dialog_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:indicatorColor="@color/primary"
+        app:indicatorSize="36dp" />
+
+    <TextView
+        android:id="@+id/tv_dialog_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/dialog_loading_title"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp" />
+</LinearLayout>

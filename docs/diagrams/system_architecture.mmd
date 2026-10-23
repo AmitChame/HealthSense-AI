@@ -1,0 +1,45 @@
+graph TD
+    subgraph Mobile ["Android Mobile Client (Java / MVVM)"]
+        Scanner["CameraX + Google ML Kit Scanner"] --> VM["RecommendationViewModel"]
+        Firestore[("Cloud Firestore (Family Data)")] --> FamilyRepo["FamilyRepository"]
+        FamilyRepo --> VM
+        OFF["Open Food Facts API"] --> FoodRepo["FoodProductRepository"]
+        FoodRepo --> VM
+        VM --> NetCheck{"Network Available?"}
+        NetCheck -->|No / Offline Mode| LocalEngine["Client-Side HealthRuleEngine.java"]
+        NetCheck -->|Yes / Connected| RetrofitClient["Retrofit2 HTTP Client"]
+    end
+
+    subgraph Backend ["Python Django AI Backend (ai_backend/)"]
+        RetrofitClient -- "POST /api/v2/recommend/" --> DRF["Django REST Framework Views"]
+        
+        subgraph Stage1 ["Stage 1: Product-Level Food Profiling (Nutri-Score FSA)"]
+            DRF --> Grader["HealthSenseFoodGrader"]
+            Grader --> NutriScore["Rayner Nutrient Score (N - P)"]
+            NutriScore --> ImmGrade["Immutable Product Grade (A, B, C, D, E)"]
+        end
+
+        subgraph Stage2 ["Stage 2: Person-Level Personalized Guidance"]
+            DRF --> RuleEngine["HealthSenseRuleEngine"]
+            ImmGrade --> RuleEngine
+            RuleEngine --> Allergen["Allergen Taxonomy Engine (9+ Classes)"]
+            RuleEngine --> Additives["Additive & Preservative Detector"]
+            RuleEngine --> LifeStage["Pediatric & Life-Stage Boundaries"]
+            RuleEngine --> KDIGO["KDIGO Renal Clinical Uncertainty"]
+            RuleEngine --> Standards[("14 Public Health Standards")]
+        end
+
+        subgraph ML ["Supporting ML Baseline & Explainability"]
+            DRF -.-> Factory["ModelFactory & ModelRegistry"]
+            Factory --> LightGBM["LightGBM Classifier (97.47% Acc)"]
+            LightGBM --> SHAP["SHAP Feature Attribution / Fallback"]
+        end
+
+        RuleEngine --> Assembler["Response Payload Assembler"]
+        SHAP --> Assembler
+        ImmGrade --> Assembler
+    end
+
+    Assembler --> RetrofitClient
+    LocalEngine --> ResultUI["Guidance & Recommendation UI"]
+    RetrofitClient --> ResultUI
